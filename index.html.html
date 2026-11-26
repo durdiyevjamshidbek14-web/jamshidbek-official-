@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angren Ish</title>
+    <section style="padding:20px; background:white; border-radius:12px; margin-top:20px;">
+        <h2 style="text-align:center;">Bizning Xizmatlar</h2>
+        <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin-top:15px;">
+            <div style="border: 1px solid #ddd; padding: 15px; border-radius: 10px; width: 200px;  text-align:center;">
+                <h3>Uy ta'miri</h3>
+                <p>Narxi kelishiladi</p>
+                <div
+                    style="border: 1px; solid: #ddd; padding: 15px; border-radius: 10px; width: 200px; text-align: center;">
+                    <h3>Usta xizmati</h3>
+                    <p>Narxi kelishiladi</p>
+                    <div
+                        style="border: 1px; solid: #ddd; padding: 15px; border-radius: 10px; width: 200px; text-align: center;">
+                        <h3>Yetkazib berish</h3>
+                        <p>Angren bo'yicha</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 20px;
+            min-height: 100vh
+        }
+
+        .head {
+            background: #2563eb;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid#ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            ;
+            display: flex;
+            justify-content: space-between
+        }
+
+        .card button {
+            background: #ef4444
+        }
+    </style>
+</head>
+
+<body>
+    <header styl="text-align:center; padding: 20px; background: #111; color: white; border-radius:12px;">
+        <h1 style="margin:0;"> JAMSHIDBEK BRENDI</h1>
+        <p style="color:#FFD700;  font-weight:bold; font-size:20px;">Sifatdan kuch ol!</p>
+    </header>
+
+    <div class="header">
+        <h1>Angren Ish</h1>
+        <p>Angrenda ish toping!</p>
+    </div>
+
+
+    <div class="box">
+        <h3>Yangi E'lon Qo'shish</h3>
+        <input id="title" placeholder="Ish nomi: Sotuvchi">
+        <input id="salary" placeholder="Maosh: 3 000 000">
+        <input id="phone" placeholder="Telefon: +998 94 167 10 28">
+        <br><br>
+        <button onclick="addJob()">+ E'lon Qo'shish</button>
+    </div>
+
+    <div id="list"></div>
+
+    <script>
+        function addJob() {
+            var t = document.getElementById('title').value;
+            var s = document.getElementById('salary').value;
+            var p = document.getElementById('phone').value;
+            if (!t) { alert("Ish nomini yozing!"); return; }
+            var d = document.createElement('div');
+            d.className = 'card';
+            var span = document.createElement('span');
+            span.textContent = t + ' - ' + s + ' - ' + p;
+            var b = document.createElement('button');
+            b.textContent = 'Ochirish';
+            b.onclick = function () { d.remove(); };
+            d.appendChild(span);
+            d.appendChild(b);
+            document.getElementById('list').appendChild(d);
+            document.getElementById('title').value = '';
+            document.getElementById('salary').value = '';
+            document.getElementById('phone').value = '';
+        }  
+    </script>
+    <footer
+        style="text-align:center; padding:20px;  margin-top:30px;  background:#111; color:white; border-radius:12px;">
+        <p style="margin: 0;">Created by Jamshidbek</p>
+        <P style="margin:5px 0 0; color:#FFD700;">JAMSHIDBEK BRENDI - Sifatdan kuch ol!</P>
+
+        <a href="https://wa.me/+9989 94 167 10 28" target="_blank"
+            style="position:fixed; bottom: 20px; right: 20px;  background:#25D366; color: white; padding:  15px 20px; border-radius: 50px; text-decoration: none;"><Whatsapp ga yozish></a>
+    </footer>
+</body>
+</html>
